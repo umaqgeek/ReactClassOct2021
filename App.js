@@ -8,6 +8,7 @@ import {
 } from 'react-native'
 
 import Title from './src/components/Title'
+import Button from './src/components/Button'
 
 class App extends React.Component {
   constructor(props) {
@@ -33,9 +34,7 @@ class App extends React.Component {
           style={styles.textinput} 
           placeholder='Type your username' />
 
-        <TouchableOpacity style={styles.button}>
-         <Text style={styles.buttonText}>Log Masuk</Text> 
-        </TouchableOpacity>
+        <Button />
 
       </View>
     )
@@ -53,19 +52,6 @@ const styles = StyleSheet.create({
     borderColor: 'red',
     marginTop: 32,
     paddingHorizontal: 8
-  },
-  button: {
-    borderWidth: 1,
-    width: 200,
-    borderRadius: 4,
-    padding: 16,
-    marginTop: 40,
-    backgroundColor: 'rgba(0,0,0,1)'
-  },
-  buttonText: {
-    textAlign: 'center',
-    color: 'white',
-    fontWeight: 'bold'
   }
 })
 
