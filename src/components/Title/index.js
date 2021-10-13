@@ -11,11 +11,12 @@ class Title extends React.Component {
   render() {
 
     const title = this.props.title || 'Title Default'
+    const description = this.props.description || 'Default description'
 
     return (
       <View style={styles.titleContainer}>
         <Text style={styles.text}>{title}</Text>
-        <Text>Description saya</Text>
+        <Text>{description}</Text>
       </View>
     )
   }

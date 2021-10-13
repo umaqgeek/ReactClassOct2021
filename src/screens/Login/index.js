@@ -14,30 +14,51 @@ class Login extends React.Component {
     super(props)
 
     this.state = {
-      title: 'Title Saya',
-      arrYear: ['D1', 'D2', 'D3']
+        username: '',
+        password: ''
     }
   }
 
-  goToDashboard = () => {
-      this.props.navigation.replace('Dashboard')
+  onLogin = () => {
+      const username = this.state.username
+      const password = this.state.password
+
+      if (username == 'umar' && password == '123') {
+        this.props.navigation.replace('Dashboard')
+      } else {
+        alert('Salah username/password!')
+      }
+  }
+
+  onHandleInput = (text, name) => {
+      this.setState({
+          [name]: text
+      })
   }
 
   render() {
 
-    const title1 = 'Title Saya'
-    const title2 = 'Title kita'
+    const title = 'Welcome to React Native'
+    const desc = 'Login Screen'
 
     return (
       <View style={styles.mainContainer}>
-        <Title title={title1} />
-        <Title title={title2} />
-        <Title />
-        <TextInput 
-          style={styles.textinput} 
-          placeholder='Type your username' />
+        <Title title={title} description={desc} />
 
-        <Button onPress={this.goToDashboard} />
+        <TextInput
+          style={styles.textinput}
+          placeholder='Type your username'
+          value={this.state.username}
+          onChangeText={(text) => this.onHandleInput(text, 'username')} />
+
+        <TextInput
+          style={styles.textinput}
+          placeholder='Type your password'
+          secureTextEntry={false}
+          value={this.state.password}
+          onChangeText={(text) => this.onHandleInput(text, 'password')} />
+
+        <Button onPress={this.onLogin} />
 
       </View>
     )
