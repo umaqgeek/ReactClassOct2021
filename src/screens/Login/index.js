@@ -1,8 +1,9 @@
 import React from 'react'
 import { 
   View,
+  ScrollView,
   TextInput,
-  StyleSheet
+  Image
 } from 'react-native'
 
 import Title from '../../components/Title'
@@ -42,7 +43,8 @@ class Login extends React.Component {
     const desc = 'Login Screen'
 
     return (
-      <View style={styles.mainContainer}>
+      <ScrollView
+        contentContainerStyle={styles.mainContainer}>
         <Title title={title} description={desc} />
 
         <TextInput
@@ -60,7 +62,15 @@ class Login extends React.Component {
 
         <Button onPress={this.onLogin} />
 
-      </View>
+        <Image
+            style={{
+                width: '90%',
+                height: 300,
+                marginTop: 32
+            }}
+            source={require('../../assets/images/gambar1.png')}/>
+
+      </ScrollView>
     )
   }
 }
