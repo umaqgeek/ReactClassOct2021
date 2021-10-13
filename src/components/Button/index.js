@@ -10,7 +10,8 @@ class Button extends React.Component {
 
   render() {
     return (
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} 
+        onPress={this.props.onPress}>
          <Text style={styles.buttonText}>Log Masuk</Text> 
       </TouchableOpacity>
     )

@@ -19,6 +19,10 @@ class Login extends React.Component {
     }
   }
 
+  goToDashboard = () => {
+      this.props.navigation.replace('Dashboard')
+  }
+
   render() {
 
     const title1 = 'Title Saya'
@@ -33,7 +37,7 @@ class Login extends React.Component {
           style={styles.textinput} 
           placeholder='Type your username' />
 
-        <Button />
+        <Button onPress={this.goToDashboard} />
 
       </View>
     )
